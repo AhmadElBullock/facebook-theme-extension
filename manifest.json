@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Facebook Themes Extension",
+    "version": "1.0",
+    "description": "Select you favorite facebook theme",
+    "icons": {
+        "128": "f128.png",
+        "48": "f48.png",
+        "16": "f16.png"
+    },
+    "page_action": {
+        "default_icon": "f16.png",
+        "default_popup": "popup.html",
+        "default_title": "Facebook Theme"
+    },
+
+    "background": {
+        "scripts": ["eventPage.js"],
+        "persistent": false
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["https://www.facebook.com/*"],
+            "js": ["content.js", "jquery.min"]
+        }
+    ],
+
+    "permissions": [
+        "tabs",
+        "https://www.facebook.com/*"
+    ]
+
+
+}
